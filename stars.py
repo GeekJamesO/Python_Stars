@@ -29,16 +29,22 @@
 def draw_stars(arr):
     answer = []
     for entry in arr:
-        # print entry
         if isinstance(entry, int):
             aWord = ""
             for i in range(1, entry+1):
                 aWord += '*'
             # print aWord
             answer.append(aWord)
+        elif isinstance(entry, basestring):
+            aWord = ""
+            aChar = entry.lower()[0]
+            for i in range(1, len(entry) + 1):
+                aWord += aChar
+            # print aWord
+            answer.append(aWord)
     for s in answer:
         print (s)
     return answer
 print "Function draw_stars"
-draw_stars( [4,6,1,3,5,7,25] )
+draw_stars( [4, "Tom", 1, "Michael", 5, 7, "Jimmy Smith"] )
 print ""
